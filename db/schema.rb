@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_184245) do
+ActiveRecord::Schema.define(version: 2021_10_26_015738) do
 
   create_table "banners", force: :cascade do |t|
     t.string "name"
@@ -19,4 +19,21 @@ ActiveRecord::Schema.define(version: 2021_10_25_184245) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "banners_campaigns", force: :cascade do |t|
+    t.integer "banner_id", null: false
+    t.integer "campaign_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["banner_id"], name: "index_banners_campaigns_on_banner_id"
+    t.index ["campaign_id"], name: "index_banners_campaigns_on_campaign_id"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "banners_campaigns", "banners"
+  add_foreign_key "banners_campaigns", "campaigns"
 end
