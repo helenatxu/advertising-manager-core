@@ -1,24 +1,16 @@
-# README
+# Getting Started with Advertising Manager Core
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One you have cloned the repository, make sure you have installed and you are using the ruby version 3.0.1 (with `ruby -v`). 
+Now, run `gem install bundler` and then `bundler` to install the gems of the projects. Later run `yarn` to install yarn dependencies.
 
-Things you may want to cover:
+To easily run `brew tap heroku/brew && brew install heroku`.
+Don't forget to create the database running `rails db:create` and `rails db:seed`, otherwise the app will not work.
 
-* Ruby version
+After that, to start the core-backend in the development mode, you can run:
+### `heroku local -f Procfile.dev`
 
-* System dependencies
 
-* Configuration
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
